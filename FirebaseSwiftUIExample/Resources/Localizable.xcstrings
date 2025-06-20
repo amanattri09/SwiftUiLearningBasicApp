@@ -1,7 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Dashboad View" : {
+
+    },
+    "Dismiss" : {
+
+    },
+    "Email" : {
+
+    },
     "Enter your password" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -10,6 +20,15 @@
           }
         }
       }
+    },
+    "Forgot Password screen" : {
+
+    },
+    "Forgot Password?" : {
+
+    },
+    "Log in" : {
+
     },
     "Login" : {
       "localizations" : {
@@ -21,6 +40,9 @@
         }
       }
     },
+    "Login now" : {
+
+    },
     "Password" : {
       "localizations" : {
         "en" : {
@@ -31,7 +53,14 @@
         }
       }
     },
+    "Register" : {
+
+    },
+    "User has been registered successfully.You can login now" : {
+
+    },
     "User Name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -40,6 +69,15 @@
           }
         }
       }
+    },
+    "User not registerd" : {
+
+    },
+    "User Registered Successfully" : {
+
+    },
+    "Would you like to register user?" : {
+
     }
   },
   "version" : "1.0"
