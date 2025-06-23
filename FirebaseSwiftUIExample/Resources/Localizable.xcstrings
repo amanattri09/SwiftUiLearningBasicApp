@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Dashboad View" : {
-
-    },
     "Dismiss" : {
 
     },
@@ -21,10 +18,16 @@
         }
       }
     },
+    "Error: %@" : {
+
+    },
     "Forgot Password screen" : {
 
     },
     "Forgot Password?" : {
+
+    },
+    "Loading..." : {
 
     },
     "Log in" : {
@@ -52,6 +55,9 @@
           }
         }
       }
+    },
+    "Posts" : {
+
     },
     "Register" : {
 

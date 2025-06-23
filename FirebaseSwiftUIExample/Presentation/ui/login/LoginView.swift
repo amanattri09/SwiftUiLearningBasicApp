@@ -10,10 +10,10 @@ import FirebaseAuth
 
 struct LoginView: View {
     
-    @State private var username = ""
-    @State private var password = ""
-    @State private var isValidEmail = false
-    @State private var isPasswordValid = false
+    @State private var username = "aman@gmail.com"
+    @State private var password = "1234567"
+    @State private var isValidEmail = true
+    @State private var isPasswordValid = true
     @State private var errorMessage = ""
     @State private var selection  : String? = nil
     @State private var isLoading   = false
