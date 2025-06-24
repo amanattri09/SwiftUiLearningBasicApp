@@ -18,6 +18,7 @@ struct LoginView: View {
     @State private var selection  : String? = nil
     @State private var isLoading   = false
     @State private var showRegisterUserAlert  = false
+    @State private var isUserLoggedIn  = false
     
     let NAV_DASHBOARD = "dashboard"
     let NAV_REGISTER = "register"
@@ -122,6 +123,12 @@ struct LoginView: View {
             } message: {
                 Text("Would you like to register user?")
             }
+            .onAppear {
+                isUserLoggedIn = UserDefaults.standard.string(forKey: AppConstants.PrefKeys.KEY_USER_ID) != nil
+                if isUserLoggedIn {
+                    selection = NAV_DASHBOARD
+                }
+            }
         }
     }
     
@@ -137,6 +144,10 @@ struct LoginView: View {
                 }
             } else {
                 errorMessage = ""
+                if let uid = result?.user.uid {
+                    UserDefaults.standard.set(uid, forKey: AppConstants.PrefKeys.KEY_USER_ID)
+                    UserDefaults.standard.set(result?.user.email, forKey: AppConstants.PrefKeys.KEY_EMAIL)
+                }
                 selection = NAV_DASHBOARD
             }
             isLoading = false

@@ -27,7 +27,36 @@
     "Forgot Password?" : {
 
     },
+    "Home" : {
+
+    },
+    "id : %lld , title : %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "id : %1$lld , title : %2$@"
+          }
+        }
+      }
+    },
+    "Lat: %lf, Lon: %lf" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Lat: %1$lf, Lon: %2$lf"
+          }
+        }
+      }
+    },
     "Loading..." : {
+
+    },
+    "Location Access Denied" : {
+
+    },
+    "Location Access Granted" : {
 
     },
     "Log in" : {
@@ -46,6 +75,9 @@
     "Login now" : {
 
     },
+    "Logout" : {
+
+    },
     "Password" : {
       "localizations" : {
         "en" : {
@@ -56,10 +88,13 @@
         }
       }
     },
-    "Posts" : {
+    "Register" : {
 
     },
-    "Register" : {
+    "Request Location Access" : {
+
+    },
+    "Request location..." : {
 
     },
     "User has been registered successfully.You can login now" : {
@@ -79,7 +114,13 @@
     "User not registerd" : {
 
     },
+    "User Profile" : {
+
+    },
     "User Registered Successfully" : {
+
+    },
+    "Waiting for Permission" : {
 
     },
     "Would you like to register user?" : {
