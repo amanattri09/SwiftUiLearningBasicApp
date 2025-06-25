@@ -4,6 +4,9 @@
     "Dismiss" : {
 
     },
+    "Do you realy want to logout?" : {
+
+    },
     "Email" : {
 
     },
@@ -17,6 +20,9 @@
           }
         }
       }
+    },
+    "error is %@" : {
+
     },
     "Error: %@" : {
 
@@ -78,6 +84,9 @@
     "Logout" : {
 
     },
+    "No" : {
+
+    },
     "Password" : {
       "localizations" : {
         "en" : {
@@ -124,6 +133,9 @@
 
     },
     "Would you like to register user?" : {
+
+    },
+    "Yes" : {
 
     }
   },

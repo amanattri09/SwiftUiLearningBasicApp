@@ -9,6 +9,10 @@ import Foundation
 
 struct AppConstants {
     
+    struct Api {
+        static let BASE_URL = "https://jsonplaceholder.typicode.com"
+    }
+    
     struct PrefKeys {
         static let KEY_IS_USER_LOGGED_IN = "KEY_IS_USER_LOGGED_IN"
         static let KEY_USER_ID = "KEY_USER_ID"

@@ -11,15 +11,25 @@ import SwiftUI
 struct PostDetail: View {
     
     let item : PostModal
+    @StateObject private var postDetailViewModal = PostDetailViewModel()
     
     var body: some View {
         VStack(alignment : .leading) {
-            Text("id : \(item.id) , title : \(item.title)")
+            if postDetailViewModal.isLoading {
+                ProgressView()
+            } else if let post = postDetailViewModal.post {
+                Text("id : \(post.id) , title : \(post.title)")
+            } else if let error = postDetailViewModal.errorMessage {
+                Text("error is \(error)").foregroundColor(Color.red)
+            }
             Spacer()
         }
         .navigationTitle(item.title)
         .frame(maxHeight: .infinity)
         .padding()
+        .onAppear{
+            postDetailViewModal.getPostDetail(id: String(item.id))
+        }
     }
 }
 

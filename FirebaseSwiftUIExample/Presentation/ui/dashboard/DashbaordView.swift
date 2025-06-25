@@ -12,6 +12,7 @@ struct DashbaordView: View {
     @StateObject private var viewModal  = DashboardViewModal()
     @StateObject private var locationManager = LocationManager()
     @Environment(\.dismiss) var dismiss
+    @State private var showLogoutAlert = false
     
     var body: some View {
         NavigationView {
@@ -61,10 +62,21 @@ struct DashbaordView: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Logout") {
-                            logoutUser()
-                            dismiss()
+                            showLogoutAlert = true
                         }
                     }
+                }
+                .alert("Logout", isPresented: $showLogoutAlert){
+                    Button("No"){
+                        showLogoutAlert = false
+                    }
+                    Button("Yes"){
+                        showLogoutAlert = false
+                        logoutUser()
+                        dismiss()
+                    }
+                } message: {
+                    Text("Do you realy want to logout?")
                 }
         }
         .navigationBarBackButtonHidden(true)
