@@ -25,7 +25,7 @@ struct DashbaordView: View {
                     if let location = locationManager.location {
                         Text("Lat: \(location.coordinate.latitude), Lon: \(location.coordinate.longitude)")
                     }else {
-                        Text("Request location...").background(Color.red)
+                        Text("Request location...")
                         Button("Request Location Access"){
                             locationManager.checkIfLocationServicesIsEnabled()
                         }

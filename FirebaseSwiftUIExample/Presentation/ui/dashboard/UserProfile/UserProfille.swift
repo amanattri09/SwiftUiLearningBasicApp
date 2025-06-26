@@ -13,6 +13,8 @@ struct UserProfille: View {
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var showPhotoPicker = false
     @State private var selectedImage : UIImage? = nil
+    @State private var showImagePickerAlert : Bool = false
+    @State private var showCamera : Bool = false
     
     var body: some View {
         VStack (){
@@ -29,7 +31,7 @@ struct UserProfille: View {
                     .frame(width: 48,height: 48)
                     .padding()
                     .onTapGesture {
-                        showPhotoPicker = true
+                        showImagePickerAlert = true
                     }
             }
             Spacer()
@@ -37,7 +39,7 @@ struct UserProfille: View {
         .navigationTitle("User Profile")
         .padding(.top)
         .photosPicker(isPresented: $showPhotoPicker, selection: $selectedItem)
-        .onChange(of: selectedItem){ newItem in
+        .onChange(of: selectedItem){ oldItem , newItem in
             Task {
                 if let data = try? await newItem?.loadTransferable(type: Data.self),
                    let uiImage = UIImage(data: data) {
@@ -45,6 +47,18 @@ struct UserProfille: View {
                 }
             }
         }
+        .confirmationDialog("Choose an Option", isPresented: $showImagePickerAlert, titleVisibility: .visible) {
+            Button("Pick image from gallery") {
+                showPhotoPicker = true
+            }
+            Button("Take photo from Camera") {
+                showCamera = true
+            }
+        }
+        .sheet(isPresented: $showCamera, content: {
+            ImagePickerCustom(sourceType: .camera, selectedImage: $selectedImage)
+        })
+        
     }
 }
 

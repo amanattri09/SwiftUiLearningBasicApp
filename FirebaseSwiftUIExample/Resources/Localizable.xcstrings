@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Choose an Option" : {
+
+    },
     "Dismiss" : {
 
     },
@@ -97,6 +100,9 @@
         }
       }
     },
+    "Pick image from gallery" : {
+
+    },
     "Register" : {
 
     },
@@ -104,6 +110,9 @@
 
     },
     "Request location..." : {
+
+    },
+    "Take photo from Camera" : {
 
     },
     "User has been registered successfully.You can login now" : {
