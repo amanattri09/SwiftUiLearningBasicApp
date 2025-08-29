@@ -9,4 +9,5 @@ import Combine
 
 protocol PostRepositary {
     func getPostDetail(_ id:String) -> AnyPublisher<PostModal , Error>
+    func getAllPosts() -> AnyPublisher<[PostModal], Error>
 }

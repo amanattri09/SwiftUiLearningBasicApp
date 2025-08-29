@@ -49,6 +49,9 @@
         }
       }
     },
+    "Key" : {
+      "extractionState" : "manual"
+    },
     "Lat: %lf, Lon: %lf" : {
       "localizations" : {
         "en" : {

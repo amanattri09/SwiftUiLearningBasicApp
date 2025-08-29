@@ -10,9 +10,11 @@ import Combine
 
 protocol PostServiceProtocol {
     func getPostDetail(id:String) -> AnyPublisher<PostModal , Error>
+    func getAllPosts() -> AnyPublisher<[PostModal], Error>
 }
 
 class PostService : PostServiceProtocol{
+    
     func getPostDetail(id : String) -> AnyPublisher<PostModal, any Error> {
         let url = URL(string: "\(AppConstants.Api.BASE_URL)/posts/\(id)")!
         return URLSession.shared.dataTaskPublisher(for: url)
@@ -21,4 +23,14 @@ class PostService : PostServiceProtocol{
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
+    
+    func getAllPosts() -> AnyPublisher<[PostModal], any Error> {
+        let url = URL(string: "\(AppConstants.Api.BASE_URL)/posts")!
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map(\.data)
+            .decode(type: [PostModal].self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
 }

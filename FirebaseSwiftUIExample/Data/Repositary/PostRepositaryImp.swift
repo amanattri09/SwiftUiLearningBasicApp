@@ -19,4 +19,8 @@ class PostRepositaryImp : PostRepositary {
     func getPostDetail(_ id: String) -> AnyPublisher<PostModal, any Error> {
         return service.getPostDetail(id: id)
     }
+    
+    func getAllPosts() -> AnyPublisher<[PostModal], any Error> {
+        return service.getAllPosts()
+    }
 }

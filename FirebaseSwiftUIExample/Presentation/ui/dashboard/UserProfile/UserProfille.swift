@@ -52,7 +52,11 @@ struct UserProfille: View {
                 showPhotoPicker = true
             }
             Button("Take photo from Camera") {
-                showCamera = true
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    showCamera = true
+                }else {
+                    showPhotoPicker = true
+                }
             }
         }
         .sheet(isPresented: $showCamera, content: {

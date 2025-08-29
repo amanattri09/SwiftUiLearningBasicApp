@@ -81,7 +81,7 @@ struct DashbaordView: View {
         }
         .navigationBarBackButtonHidden(true)
         .onAppear {
-            viewModal.fetchPosts()
+            viewModal.fetchPostsV2()
         }
     }
     
